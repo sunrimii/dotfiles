@@ -14,7 +14,7 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 eval "$(zoxide init zsh)"
 
 # flutter
-export PATH="$PATH:/Users/admin/flutter/bin"
+export PATH="$PATH:~/flutter/bin"
 
 # zsh-autosuggedtions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
