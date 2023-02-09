@@ -19,9 +19,6 @@ export PATH="$PATH:~/flutter/bin"
 # zsh-autosuggedtions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# zsh-vi-mode
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
 # go
 export GOPATH=${HOME}/go
 PATH=${PATH}:${HOME}/go/bin
