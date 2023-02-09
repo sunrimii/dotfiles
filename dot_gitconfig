@@ -1,0 +1,5 @@
+[core]
+	excludesfile = /Users/admin/.gitignore_global
+[user]
+	email = jiahe@eating-out.co
+	name = JiaheEatingOut
