@@ -28,3 +28,6 @@ PATH=${PATH}:${HOME}/go/bin
 
 # docker
 alias dc="docker-compose"
+
+# chezmoi
+export PATH="$PATH:/root/bin"
