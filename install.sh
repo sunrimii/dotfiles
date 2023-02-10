@@ -13,7 +13,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 apt install zoxide
 
 # dotfiles
-cd ~
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply sunrimii
-
+chezmoi init sunrimii
+chezmoi update
 source ~/.zshrc
