@@ -1,5 +1,6 @@
 # utils
-sudo apt update
+apt update
+apt install sudo
 sudo apt install fish grc fzf zoxide fd-find exa bat
 
 # starship
