@@ -13,6 +13,6 @@ $ chezmoi update
 ```sh
 $ git clone https://github.com/sunrimii/dotfiles ~/dotfiles
 $ cd ~/dotfiles
-$ install.sh
+$ sh install.sh
 ```
 
