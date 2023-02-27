@@ -1,28 +1,35 @@
-source ~/.zplug/zplug
+if [ -f ${HOME}/.zplug/init.zsh ]; then
+    source ${HOME}/.zplug/init.zsh
+fi
 
-# TODO zoxide, zsh-autosuggestions
-zplug "mafredri/zsh-async", nice:13
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
-zplug "zsh-users/zsh-completions", nice:11
-zplug "zsh-users/zsh-history-substring-search", nice:12
-zplug "hoffi/zsh-theme-lambda"
-zplug "hoffi/zsh-git-aliases", if:"which git"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "ajeetdsouza/zoxide", as:command
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "sharat87/zsh-vim-mode"
-zplug "willghatch/zsh-saneopt"
-zplug "johnhamelink/rvm-zsh", if:"which rvm"
-zplug "djui/alias-tips", nice:11
-zplug "caarlos0/zsh-mkc"
-zplug "Tarrasch/zsh-autoenv", nice:14
-zplug "rimraf/k", nice:15
-zplug "trapd00r/LS_COLORS", of:"LS_COLORS", as:command, nice:16
-zplug "~/.zsh", from:local, file:"*.zsh"
+zplug "djui/alias-tips"
 
+# Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
   if read -q; then
     echo; zplug install
   fi
 fi
+
+# Then, source plugins and add commands to $PATH
 zplug load
+
+# sharing Git credentials with container
+if [ -z "$SSH_AUTH_SOCK" ]; then
+   # Check for a currently running instance of the agent
+   RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
+   if [ "$RUNNING_AGENT" = "1" ]; then
+        # Launch a new instance of the agent
+        ssh-agent -s &> $HOME/.ssh/ssh-agent
+   fi
+   eval `cat $HOME/.ssh/ssh-agent`
+fi
 
 alias dc="docker-compose"

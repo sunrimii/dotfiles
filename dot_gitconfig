@@ -3,3 +3,9 @@
 [user]
 	email = jiahe@eating-out.co
 	name = JiaheEatingOut
+[alias]
+    co = checkout
+	br = branch
+	ci = commit
+	st = status
+
